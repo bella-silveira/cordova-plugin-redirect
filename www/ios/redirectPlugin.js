@@ -1,5 +1,5 @@
 var RedirectPlugin = (function(){
-	
+
 	function ensureBoolean(callback){
 		return function(result){
 			callback(!!result);
@@ -8,11 +8,11 @@ var RedirectPlugin = (function(){
 
 	var RedirectPlugin = {};
 
-	RedirectPlugin.switchToLocation = function(successCallback, errorCallback) {
+	RedirectPlugin.switchToPasscode = function(successCallback, errorCallback) {
 		return cordova.exec(successCallback,
 			errorCallback,
 			'RedirectPlugin',
-			'switchToLocation',
+			'switchToPasscode',
 			[]);
 	};
 
