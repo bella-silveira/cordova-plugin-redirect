@@ -1,5 +1,5 @@
 var RedirectPlugin = (function(){
-
+	
 	function ensureBoolean(callback){
 		return function(result){
 			callback(!!result);
