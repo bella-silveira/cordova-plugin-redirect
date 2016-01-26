@@ -1,0 +1,30 @@
+{
+    "version": "0.0.1",
+    "name": "cordova-plugin-redirect",
+    "cordova_name": "RedirectPlugin",
+    "description": "Cordova plugin that redirects the user to native pages on the system.",
+    "author": "Isabella Silveira",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bella-silveira/cordova-plugin-redirect.git"
+    },
+    "issue": "https://github.com/bella-silveira/cordova-plugin-redirect/issues",
+    "cordova": {
+        "id": "cordova-plugin-redirect",
+        "platforms": [
+            "ios"
+        ]
+    },
+    
+    "keywords": [
+        "ecosystem:cordova",
+        "cordova",
+        "ios",
+        "redirect",
+        "native",
+        "pages",
+        "settings",
+        "passcode"
+    ]
+}

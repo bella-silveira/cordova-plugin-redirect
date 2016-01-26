@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    id="cordova-plugin-redirect"
+    version="0.0.1">
+
+    <name>RedirectPlugin</name>
+    <description>Cordova plugin that redirects the user to native pages on the system.</description>
+    <author>Isabella Silveira</author>
+    <license>MIT</license>
+    <keywords>ecosystem:cordova,ios,redirect,native,pages,settings,passcode</keywords>
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <repo>https://github.com/bella-silveira/cordova-plugin-redirect.git</repo>
+    <issue>https://github.com/bella-silveira/cordova-plugin-redirect/issues</issue>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="RedirectPlugin">
+                <param name="ios-package" value="RedirectPlugin" />
+            </feature>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
+            <string>This app requires constant access to your location in order to track your position, even when the screen is off.</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+            <string>This app will now only track your location when the screen is on and the app is displayed.</string>
+        </config-file>
+
+        <js-module src="www/ios/redirectPlugin.js" name="RedirectPlugin">
+            <clobbers target="cordova-plugin-redirect" />
+        </js-module>
+
+        <header-file src="src/ios/RedirectPlugin.h" />
+        <source-file src="src/ios/RedirectPlugin.m" />
+
+        <framework src="AVFoundation.framework" />
+    </platform>
+</plugin>
