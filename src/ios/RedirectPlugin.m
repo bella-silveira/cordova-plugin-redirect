@@ -38,28 +38,28 @@
 // Settings
 - (void) switchToPasscode: (CDVInvokedUrlCommand*)command
 {
-    CDVPluginResult* pluginResult;
-    @try {
-        if (UIApplicationOpenSettingsURLString != nil){
-            [[UIApplication sharedApplication] openURL: [NSURL URLWithString: UIApplicationOpenSettingsURLString]];
-            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-        }else{
-            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Not supported below iOS 8"];
-        }
-    }
-    @catch (NSException *exception) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
-    }
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-    // CDVPluginResult* response;
+    // CDVPluginResult* pluginResult;
     // @try {
-    //     [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"prefs:root=PASSCODE"]];
-    //     response = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    //     if (UIApplicationOpenSettingsURLString != nil){
+    //         [[UIApplication sharedApplication] openURL: [NSURL URLWithString: UIApplicationOpenSettingsURLString]];
+    //         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    //     }else{
+    //         pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:@"Not supported below iOS 8"];
+    //     }
     // }
     // @catch (NSException *exception) {
-    //     response = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
+    //     pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
     // }
-    // [self.commandDelegate sendPluginResult:response callbackId:command.callbackId];
+    // [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    CDVPluginResult* response;
+    @try {
+        [[UIApplication sharedApplication] openURL: [NSURL URLWithString:@"prefs:root=TOUCHID_PASSCODE"]];
+        response = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
+    }
+    @catch (NSException *exception) {
+        response = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR messageAsString:exception.reason];
+    }
+    [self.commandDelegate sendPluginResult:response callbackId:command.callbackId];
 }
 
 #pragma mark - CBCentralManagerDelegate
