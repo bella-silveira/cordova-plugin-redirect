@@ -12,7 +12,7 @@ var RedirectPlugin = (function(){
 		return cordova.exec(successCallback,
 			errorCallback,
 			'RedirectPlugin',
-			'switchToSettings',
+			'switchToLocation',
 			[]);
 	};
 
