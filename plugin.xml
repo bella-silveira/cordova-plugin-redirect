@@ -29,7 +29,7 @@
         </config-file>
 
         <js-module src="www/ios/redirectPlugin.js" name="RedirectPlugin">
-            <clobbers target="cordova-plugin-redirect" />
+            <clobbers target="cordova.plugin.redirect" />
         </js-module>
 
         <header-file src="src/ios/RedirectPlugin.h" />
