@@ -82,7 +82,7 @@
         self.bluetoothEnabled = false;
     }
     
-    NSString* jsString = [NSString stringWithFormat:@"cordova-plugins-redirect._onBluetoothStateChange(\"%@\");", state];
+    NSString* jsString = [NSString stringWithFormat:@"cordova.plugins.redirect._onBluetoothStateChange(\"%@\");", state];
     [self jsCallback:jsString];
 }
 
